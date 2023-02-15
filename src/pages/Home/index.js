@@ -7,7 +7,10 @@ import {
   SubContainer,
   InputOne,
   ImageEmail,
-  ImageSenha,
+  FirstView,
+  TextColorWhite,
+  InputTextView,
+  ViewImage,
 } from './styles';
 import {useNavigation} from '@react-navigation/native';
 
@@ -17,13 +20,22 @@ export default function Home() {
   return (
     <Container>
       <SubContainer>
-        <Logo source={require('../../assets/images/Logo.png')} />
-        <InputOne>
-          <ImageEmail source={require('../../assets/images/Msg.png')} />
-        </InputOne>
-        <InputOne>
-          <ImageSenha source={require('../../assets/images/Senha.png')} />
-        </InputOne>
+        <FirstView>
+          <Logo source={require('../../assets/images/Logo.png')} />
+        </FirstView>
+        <TextColorWhite>Acesse sua conta</TextColorWhite>
+        <InputTextView>
+          <ViewImage>
+            <ImageEmail source={require('../../assets/images/Msg.png')} />
+          </ViewImage>
+          <InputOne placeholder="e-mail" keyboardType="email" />
+        </InputTextView>
+        <InputTextView>
+          <ViewImage>
+            <ImageEmail source={require('../../assets/images/Senha.png')} />
+          </ViewImage>
+          <InputOne placeholder="Senha" keyboardType="passowrd" />
+        </InputTextView>
         <ButtonNav onPress={() => navigation.navigate('Home')}>
           <Title>Entrar</Title>
         </ButtonNav>
