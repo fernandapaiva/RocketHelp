@@ -1,16 +1,22 @@
-import * as React from 'react';
+import React from 'react';
 import {
   Container,
-  ButtonNav,
-  Title,
-  Logo,
   SubContainer,
-  InputOne,
-  ImageEmail,
-  FirstView,
-  TextColorWhite,
-  InputTextView,
-  ViewImage,
+  Logo,
+  BackgroundFirst,
+  Button,
+  ImageSign,
+  TitleNumber,
+  TitleSolicite,
+  ViewRow,
+  TextGreen,
+  TextOrange,
+  ViewProgress,
+  ViewSearch,
+  ViewFinished,
+  BackgroundSymbol,
+  Symbol,
+  TextAlert,
 } from './styles';
 import {useNavigation} from '@react-navigation/native';
 
@@ -20,26 +26,29 @@ export default function Home() {
   return (
     <Container>
       <SubContainer>
-        <FirstView>
-          <Logo source={require('../../assets/images/Logo.png')} />
-        </FirstView>
-        <TextColorWhite>Acesse sua conta</TextColorWhite>
-        <InputTextView>
-          <ViewImage>
-            <ImageEmail source={require('../../assets/images/Msg.png')} />
-          </ViewImage>
-          <InputOne placeholder="e-mail" keyboardType="email" />
-        </InputTextView>
-        <InputTextView>
-          <ViewImage>
-            <ImageEmail source={require('../../assets/images/Senha.png')} />
-          </ViewImage>
-          <InputOne placeholder="Senha" keyboardType="passowrd" />
-        </InputTextView>
-        <ButtonNav onPress={() => navigation.navigate('Home')}>
-          <Title>Entrar</Title>
-        </ButtonNav>
+        <BackgroundFirst>
+          <Logo source={require('../../assets/images/Logo2.png')} />
+          <Button onPress={() => navigation.goBack()}>
+            <ImageSign source={require('../../assets/images/sign.png')} />
+          </Button>
+        </BackgroundFirst>
       </SubContainer>
+      <ViewRow>
+        <TitleSolicite>Solicitações</TitleSolicite>
+        <TitleNumber>0</TitleNumber>
+      </ViewRow>
+      <ViewSearch>
+        <ViewProgress>
+          <TextOrange>EM ANDAMENTO</TextOrange>
+        </ViewProgress>
+        <ViewFinished>
+          <TextGreen>FINALIZADOS</TextGreen>
+        </ViewFinished>
+      </ViewSearch>
+      <BackgroundSymbol>
+        <Symbol source={require('../../assets/images/symbol.png')} />
+        <TextAlert>{'Você ainda não tem \n chamados criados'}</TextAlert>
+      </BackgroundSymbol>
     </Container>
   );
 }

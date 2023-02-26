@@ -2,80 +2,108 @@ import styled from 'styled-components';
 
 export const Container = styled.View`
   flex: 1;
-  background-color: #202024;
+  background-color: #000;
 `;
 
 export const SubContainer = styled.View`
-  width: 100%;
-  align-items: center;
-  justify-content: center;
+  background: #202024;
+  width: 428px;
+  height: 136px;
 `;
 
-export const FirstView = styled.View``;
-
-export const InputTextView = styled.View`
+export const BackgroundFirst = styled.View`
   flex-direction: row;
-  margin-top: 20px;
-  width: 100%;
-  margin-left: 25px;
-`;
-
-export const InputOne = styled.TextInput`
-  width: 310px;
-  height: 56px;
-  background: #121214;
-  border-top-right-radius: 6px;
-  border-bottom-right-radius: 6px;
-`;
-
-export const ViewImage = styled.TextInput`
-  width: 54px;
-  height: 56px;
-  border-bottom-left-radius: 6px;
-  border-top-left-radius: 6px;
-  background: #121214;
-  justify-content: center;
-  align-items: center;
-`;
-
-export const ButtonNav = styled.TouchableOpacity`
-  height: 56px;
-  width: 364px;
-  border-radius: 6px;
-  background: #00875f;
-  align-items: center;
-  justify-content: center;
-  margin-top: 20px;
-`;
-
-export const Title = styled.Text`
-  color: #fff;
-  font-size: 14px;
-`;
-
-export const TextColorWhite = styled.Text`
-  color: #e1e1e6;
-  font-size: 20px;
-  font-weight: bold;
-  line-height: 80px;
+  justify-content: space-between;
+  margin-left: 10px;
+  margin-right: 35px;
+  margin-top: 60px;
+  padding: 20px;
 `;
 
 export const Logo = styled.Image`
-  width: 163px;
-  height: 87px;
+  width: 154px;
+  height: 26px;
 `;
 
-export const ImageEmail = styled.Image`
-  width: 19.5px;
-  height: 15px;
+export const Symbol = styled.Image`
+  width: 40.74px;
+  height: 40px;
 `;
 
-export const ImagePassowrd = styled.Image`
-  width: 20.5px;
-  height: 20.5;
+export const BackgroundSymbol = styled.View`
+  width: 100%;
+  align-items: center;
+  margin-top: 30px;
 `;
 
-export const ImageSenha = styled.Image`
-  width: 16.25px;
-  height: 18.25px;
+export const Button = styled.TouchableOpacity`
+  height: 26px;
+  width: 26px;
+  background: #202024;
+`;
+
+export const ImageSign = styled.Image`
+  width: 26px;
+  height: 26px;
+`;
+
+export const ViewRow = styled.View`
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  padding: 20px;
+  margin-top: 15px;
+`;
+
+export const ViewSearch = styled.View`
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  padding: 8px;
+`;
+
+export const ViewProgress = styled.View`
+  width: 184px;
+  height: 35px;
+  border-radius: 4px;
+  background-color: #202024;
+  justify-content: center;
+  align-items: center;
+  border-color: #fb4;
+`;
+
+export const ViewFinished = styled.View`
+  width: 184px;
+  height: 35px;
+  border-radius: 4px;
+  background-color: #202024;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const TextOrange = styled.Text`
+  color: #fba94c;
+  font-size: 12px;
+`;
+
+export const TextGreen = styled.Text`
+  color: #7c7c8a;
+  font-size: 12px;
+`;
+
+export const TitleSolicite = styled.Text`
+  color: #e1e1e8;
+  font-size: 20px;
+`;
+
+export const TitleNumber = styled.Text`
+  color: #c4c4cc;
+  font-size: 16px;
+`;
+
+export const TextAlert = styled.Text`
+  color: #7c7c8a;
+  font-size: 20px;
+  line-height: 32px;
+  top: 15px;
 `;
