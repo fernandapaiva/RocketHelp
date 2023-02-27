@@ -36,7 +36,7 @@ export const BackgroundSymbol = styled.View`
   margin-top: 30px;
 `;
 
-export const Button = styled.TouchableOpacity`
+export const ButtonBack = styled.TouchableOpacity`
   height: 26px;
   width: 26px;
   background: #202024;

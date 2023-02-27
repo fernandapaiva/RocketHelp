@@ -23,18 +23,43 @@ export const TitleNumber = styled.Text`
   font-size: 16px;
 `;
 
-export const TitlePatrimony = styled.Text`
-  color: #e1e1e6;
-  font-size: 16px;
-  font-weight: bold;
+export const ViewSearchFinish = styled.View`
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  padding: 8px;
 `;
 
-export const TextDate = styled.Text`
-  color: #c4c4cc;
+export const ViewProgress = styled.View`
+  width: 184px;
+  height: 35px;
+  border-radius: 4px;
+  background-color: #202024;
+  justify-content: center;
+  align-items: center;
+  border-color: #fb4;
+`;
+
+export const TextGray = styled.Text`
+  color: #7c7c8a;
   font-size: 12px;
 `;
 
-export const ViewOne = styled.View`
+export const TextGreen = styled.Text`
+  color: #04d361;
+  font-size: 12px;
+`;
+
+export const ViewFinished = styled.View`
+  width: 184px;
+  height: 35px;
+  border-radius: 4px;
+  background-color: #202024;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const ViewGreen = styled.View`
   flex-direction: row;
   justify-content: space-between;
   width: 380px;
@@ -43,11 +68,6 @@ export const ViewOne = styled.View`
   background-color: #202024;
   margin-top: 20px;
   padding: 18px;
-`;
-
-export const ProgressView = styled.View`
-  width: 100%;
-  padding: 10px;
 `;
 
 export const ViewColum = styled.View`
@@ -67,7 +87,18 @@ export const LogoTime = styled.Image`
   height: 14.63px;
 `;
 
-export const LogoClock = styled.Image`
+export const LogoCheck = styled.Image`
   width: 48px;
   height: 48px;
+`;
+
+export const TitlePatrimony = styled.Text`
+  color: #e1e1e6;
+  font-size: 16px;
+  font-weight: bold;
+`;
+
+export const TextDate = styled.Text`
+  color: #c4c4cc;
+  font-size: 12px;
 `;

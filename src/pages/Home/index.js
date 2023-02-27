@@ -4,7 +4,7 @@ import {
   SubContainer,
   Logo,
   BackgroundFirst,
-  Button,
+  ButtonBack,
   ImageSign,
   TitleNumber,
   TitleSolicite,
@@ -20,6 +20,8 @@ import {
 } from './styles';
 import {useNavigation} from '@react-navigation/native';
 
+import Button from '../Components/Button';
+
 export default function Home() {
   const navigation = useNavigation();
 
@@ -28,9 +30,9 @@ export default function Home() {
       <SubContainer>
         <BackgroundFirst>
           <Logo source={require('../../assets/images/Logo2.png')} />
-          <Button onPress={() => navigation.goBack()}>
+          <ButtonBack onPress={() => navigation.goBack()}>
             <ImageSign source={require('../../assets/images/sign.png')} />
-          </Button>
+          </ButtonBack>
         </BackgroundFirst>
       </SubContainer>
       <ViewRow>
@@ -49,6 +51,7 @@ export default function Home() {
         <Symbol source={require('../../assets/images/symbol.png')} />
         <TextAlert>{'Você ainda não tem \n chamados criados'}</TextAlert>
       </BackgroundSymbol>
+      <Button />
     </Container>
   );
 }

@@ -9,6 +9,9 @@ import {
   TitlePatrimony,
   TextDate,
   ViewBase,
+  LogoTime,
+  LogoClock,
+  ViewColum,
 } from './styles';
 import Header from '../Components/Header';
 import Button from '../Components/Button';
@@ -25,13 +28,24 @@ export default function HomeProgress() {
       <Search />
       <ProgressView>
         <ViewOne>
-          <TitlePatrimony>Patrimônio 147456</TitlePatrimony>
+          <ViewColum>
+            <TitlePatrimony>Patrimônio 147456</TitlePatrimony>
+            <ViewBase>
+              <LogoTime source={require('../../assets/images/Vector.png')} />
+              <TextDate>20/01/22 às 14h</TextDate>
+            </ViewBase>
+          </ViewColum>
+          <LogoClock source={require('../../assets/images/IconTime.png')} />
         </ViewOne>
         <ViewOne>
-          <TitlePatrimony>Patrimônio 147456</TitlePatrimony>
-          <ViewBase>
-            <TextDate>20/01/22 às 14h</TextDate>
-          </ViewBase>
+          <ViewColum>
+            <TitlePatrimony>Patrimônio 147456</TitlePatrimony>
+            <ViewBase>
+              <LogoTime source={require('../../assets/images/Vector.png')} />
+              <TextDate>20/01/22 às 14h</TextDate>
+            </ViewBase>
+          </ViewColum>
+          <LogoClock source={require('../../assets/images/IconTime.png')} />
         </ViewOne>
       </ProgressView>
       <Button />

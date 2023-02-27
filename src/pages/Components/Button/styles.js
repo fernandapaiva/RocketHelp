@@ -8,7 +8,7 @@ export const ButtonNav = styled.TouchableOpacity`
   align-items: center;
   justify-content: center;
   position: absolute;
-  bottom: 30px;
+  bottom: 20px;
   left: 10px;
 `;
 
