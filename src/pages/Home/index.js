@@ -1,51 +1,49 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
   Container,
-  SubContainer,
-  Logo,
-  BackgroundFirst,
-  ButtonBack,
-  ImageSign,
   TitleNumber,
   TitleSolicite,
   ViewRow,
   TextGreen,
   TextOrange,
-  ViewProgress,
+  ButtonProgress,
   ViewSearch,
-  ViewFinished,
   BackgroundSymbol,
   Symbol,
   TextAlert,
+  ButtonDone,
 } from './styles';
-import {useNavigation} from '@react-navigation/native';
 
 import Button from '../Components/Button';
+import Header from '../Components/Header';
 
 export default function Home() {
-  const navigation = useNavigation();
+  const [progess, setProgress] = useState(false);
+  const [done, setDone] = useState(false);
 
+  const onPressProgress = () => {
+    setProgress(!progess);
+    setDone(false);
+  };
+
+  const onPressDone = () => {
+    setDone(!done);
+    setProgress(false);
+  };
   return (
     <Container>
-      <SubContainer>
-        <BackgroundFirst>
-          <Logo source={require('../../assets/images/Logo2.png')} />
-          <ButtonBack onPress={() => navigation.goBack()}>
-            <ImageSign source={require('../../assets/images/sign.png')} />
-          </ButtonBack>
-        </BackgroundFirst>
-      </SubContainer>
+      <Header />
       <ViewRow>
         <TitleSolicite>Solicitações</TitleSolicite>
         <TitleNumber>0</TitleNumber>
       </ViewRow>
       <ViewSearch>
-        <ViewProgress>
-          <TextOrange>EM ANDAMENTO</TextOrange>
-        </ViewProgress>
-        <ViewFinished>
-          <TextGreen>FINALIZADOS</TextGreen>
-        </ViewFinished>
+        <ButtonProgress isProgress={progess} onPress={() => onPressProgress()}>
+          <TextOrange isProgress={progess}>EM ANDAMENTO</TextOrange>
+        </ButtonProgress>
+        <ButtonDone done={done} onPress={() => onPressDone()}>
+          <TextGreen done={done}>FINALIZADOS</TextGreen>
+        </ButtonDone>
       </ViewSearch>
       <BackgroundSymbol>
         <Symbol source={require('../../assets/images/symbol.png')} />

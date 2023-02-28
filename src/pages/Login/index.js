@@ -31,13 +31,21 @@ export default function Login() {
             <ViewImage>
               <ImageEmail source={require('../../assets/images/Msg.png')} />
             </ViewImage>
-            <InputOne placeholder="E-mail" keyboardType="email" />
+            <InputOne
+              placeholder="E-mail"
+              keyboardType="email"
+              placeholderTextColor="#7c7c8a"
+            />
           </InputTextView>
           <InputTextView>
             <ViewImage>
               <ImageSenha source={require('../../assets/images/Senha.png')} />
             </ViewImage>
-            <InputOne placeholder="Senha" keyboardType="passowrd" />
+            <InputOne
+              placeholder="Senha"
+              keyboardType="passowrd"
+              placeholderTextColor="#7c7c8a"
+            />
           </InputTextView>
         </ViewSpace>
         <ButtonNav onPress={() => navigation.navigate('Home')}>

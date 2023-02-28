@@ -7,7 +7,7 @@ export const Container = styled.View`
 
 export const SubContainer = styled.View`
   background: #202024;
-  width: 428px;
+  width: 400px;
   height: 136px;
 `;
 
@@ -15,7 +15,7 @@ export const BackgroundFirst = styled.View`
   flex-direction: row;
   justify-content: space-between;
   margin-left: 10px;
-  margin-right: 35px;
+  margin-right: 10px;
   margin-top: 60px;
   padding: 20px;
 `;
@@ -62,17 +62,29 @@ export const ViewSearch = styled.View`
   padding: 8px;
 `;
 
-export const ViewProgress = styled.View`
+export const ButtonProgress = styled.TouchableOpacity`
   width: 184px;
   height: 35px;
   border-radius: 4px;
   background-color: #202024;
   justify-content: center;
   align-items: center;
-  border-color: #fb4;
+  border-color: ${props => (props.isProgress ? '#fba94c' : '#202024')};
+  border-width: 1px;
 `;
 
-export const ViewFinished = styled.View`
+export const ButtonDone = styled.TouchableOpacity`
+  width: 184px;
+  height: 35px;
+  border-radius: 4px;
+  background-color: #202024;
+  justify-content: center;
+  align-items: center;
+  border-color: ${props => (props.done ? '#04d361' : '#202024')};
+  border-width: 1px;
+`;
+
+export const ButtonFinishedGray = styled.View`
   width: 184px;
   height: 35px;
   border-radius: 4px;
@@ -82,12 +94,12 @@ export const ViewFinished = styled.View`
 `;
 
 export const TextOrange = styled.Text`
-  color: #fba94c;
+  color: ${props => (props.isProgress ? '#fba94c' : '#7C7C8A')};
   font-size: 12px;
 `;
 
 export const TextGreen = styled.Text`
-  color: #7c7c8a;
+  color: ${props => (props.done ? '#04D361' : '#7c7c8a')};
   font-size: 12px;
 `;
 

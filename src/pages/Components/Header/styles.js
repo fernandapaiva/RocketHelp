@@ -2,17 +2,15 @@ import styled from 'styled-components';
 
 export const SubContainer = styled.View`
   background: #202024;
-  width: 428px;
-  height: 136px;
+  width: 100%;
+  height: 100px;
+  justify-content: flex-end;
+  padding: 15px;
 `;
 
 export const BackgroundFirst = styled.View`
   flex-direction: row;
   justify-content: space-between;
-  margin-left: 10px;
-  margin-right: 35px;
-  margin-top: 60px;
-  padding: 20px;
 `;
 
 export const Logo = styled.Image`
@@ -20,10 +18,9 @@ export const Logo = styled.Image`
   height: 26px;
 `;
 
-export const Button = styled.TouchableOpacity`
+export const ButtonBack = styled.TouchableOpacity`
   height: 26px;
   width: 26px;
-  background: #202024;
 `;
 
 export const ImageSign = styled.Image`
