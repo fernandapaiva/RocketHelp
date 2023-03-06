@@ -23,6 +23,7 @@ export const TitleOrange = styled.Text`
   font-size: 14px;
   color: #fba94c;
   font-weight: bold;
+  margin-left: 10px;
 `;
 
 export const EquipmentView = styled.View`
@@ -30,12 +31,14 @@ export const EquipmentView = styled.View`
   height: 96px;
   background-color: #202024;
   justify-content: center;
+  align-items: flex-start;
   padding: 20px;
 `;
 
 export const TitleDescription = styled.Text`
   font-size: 14px;
   color: #7c7c8a;
+  margin-left: 8px;
 `;
 
 export const LogoComputer = styled.Image`
@@ -78,12 +81,6 @@ export const ViewSolving = styled.View`
 export const LogoSolution = styled.Image`
   width: 17.5px;
   height: 17.5px;
-`;
-
-export const SubContainer = styled.View`
-  width: 100%;
-  align-items: center;
-  padding: 20px;
 `;
 
 export const InputDescribe = styled.TextInput`

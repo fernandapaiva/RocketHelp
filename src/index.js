@@ -4,7 +4,6 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
 import Login from './pages/Login';
 import Home from './pages/Home';
-import HomeProgress from './pages/HomeProgress';
 import HomeFinalized from './pages/HomeFinalized';
 import HomeRequests from './pages/HomeRequests';
 import Request from './pages/Request';
@@ -19,7 +18,6 @@ function App() {
         screenOptions={{headerShown: false}}>
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Home" component={Home} />
-        <Stack.Screen name="HomeProgress" component={HomeProgress} />
         <Stack.Screen name="HomeFinalized" component={HomeFinalized} />
         <Stack.Screen name="HomeRequests" component={HomeRequests} />
         <Stack.Screen name="Request" component={Request} />

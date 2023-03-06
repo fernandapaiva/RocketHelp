@@ -1,4 +1,7 @@
 import styled from 'styled-components';
+import {Dimensions} from 'react-native';
+
+const {width} = Dimensions.get('window');
 
 export const Container = styled.View`
   flex: 1;
@@ -9,15 +12,6 @@ export const SubContainer = styled.View`
   background: #202024;
   width: 400px;
   height: 136px;
-`;
-
-export const BackgroundFirst = styled.View`
-  flex-direction: row;
-  justify-content: space-between;
-  margin-left: 10px;
-  margin-right: 10px;
-  margin-top: 60px;
-  padding: 20px;
 `;
 
 export const Logo = styled.Image`
@@ -118,4 +112,68 @@ export const TextAlert = styled.Text`
   font-size: 20px;
   line-height: 32px;
   top: 15px;
+`;
+
+export const ContentItem = styled.View`
+  margin-left: 20px;
+`;
+
+export const TitlePatrimony = styled.Text`
+  color: #e1e1e6;
+  font-size: 16px;
+  font-weight: bold;
+`;
+
+export const TextDate = styled.Text`
+  color: #c4c4cc;
+  font-size: 12px;
+  margin-left: 5px;
+`;
+
+export const ViewOne = styled.View`
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: ${width - 20}px;
+  height: 88px;
+  border-radius: 5px;
+  background-color: #202024;
+  align-self: center;
+`;
+
+export const Line = styled.View`
+  height: 88px;
+  width: 12px;
+  background-color: ${props => (props.isProgress ? '#fba94c' : '#04D361')};
+  align-self: center;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+`;
+
+export const ViewColum = styled.View`
+  flex-direction: row;
+  align-items: center;
+`;
+
+export const ViewBase = styled.View`
+  flex-direction: row;
+`;
+
+export const LogoTime = styled.Image`
+  width: 14.63px;
+  height: 14.63px;
+`;
+
+export const LogoClock = styled.Image`
+  width: 48px;
+  height: 48px;
+  margin-right: 10px;
+`;
+
+export const SeparatorItems = styled.View`
+  height: 16px;
+`;
+
+export const Separator = styled.View`
+  height: 5px;
 `;

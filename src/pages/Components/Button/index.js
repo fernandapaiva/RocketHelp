@@ -1,12 +1,10 @@
 import React from 'react';
 import {ButtonNav, Title} from './styles';
-import {useNavigation} from '@react-navigation/native';
 
-export default function Button() {
-  const navigation = useNavigation();
+export default function Button({title, onPress, color}) {
   return (
-    <ButtonNav onPress={() => navigation.navigate('Request')}>
-      <Title>Nova solicitação</Title>
+    <ButtonNav color={color} onPress={() => onPress()}>
+      <Title>{title}</Title>
     </ButtonNav>
   );
 }

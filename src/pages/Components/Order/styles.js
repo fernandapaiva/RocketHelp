@@ -2,16 +2,19 @@ import styled from 'styled-components';
 
 export const ViewOrder = styled.View`
   width: 100%;
-  height: 120px;
+  height: 70px;
   background-color: #202024;
-  justify-content: flex-end;
   padding: 20px;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-between;
 `;
 
 export const TitleSolicite = styled.Text`
   color: #e1e1e6;
   font-size: 20px;
   font-weight: bold;
+  width: 65%;
 `;
 
 export const LogoArrow = styled.Image`
@@ -20,10 +23,3 @@ export const LogoArrow = styled.Image`
 `;
 
 export const ButtonArrow = styled.TouchableOpacity``;
-
-export const RowView = styled.View`
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  margin-right: 120px;
-`;
