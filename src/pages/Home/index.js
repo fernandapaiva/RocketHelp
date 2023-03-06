@@ -30,6 +30,26 @@ export default function Home() {
     setDone(!done);
     setProgress(false);
   };
+
+  // const DATA = [
+  //   {
+  //     title: 'Patrimônio 147456',
+  //     date: '20/01/22 às 14h',
+  //     status: 'progess',
+  //   },
+  //   {
+  //     title: 'Patrimônio 147456',
+  //     date: '20/01/22 às 14h',
+  //     status: 'progess',
+  //   },
+  //   {
+  //     title: 'Patrimônio 147456',
+  //     date: '20/01/22 às 14h',
+  //     status: 'done',
+  //   },
+  // ];
+
+  // const listAux = DATA.filter(item => item.status === 'done');
   return (
     <Container>
       <Header />

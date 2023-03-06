@@ -47,3 +47,5 @@ export const InputTextView = styled.View`
   width: 100%;
   padding: 15px;
 `;
+
+export const ButtonArrow = styled.TouchableOpacity``;

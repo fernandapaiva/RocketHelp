@@ -7,6 +7,7 @@ import Home from './pages/Home';
 import HomeProgress from './pages/HomeProgress';
 import HomeFinalized from './pages/HomeFinalized';
 import HomeRequests from './pages/HomeRequests';
+import Request from './pages/Request';
 
 const Stack = createNativeStackNavigator();
 
@@ -21,6 +22,7 @@ function App() {
         <Stack.Screen name="HomeProgress" component={HomeProgress} />
         <Stack.Screen name="HomeFinalized" component={HomeFinalized} />
         <Stack.Screen name="HomeRequests" component={HomeRequests} />
+        <Stack.Screen name="Request" component={Request} />
       </Stack.Navigator>
     </NavigationContainer>
   );

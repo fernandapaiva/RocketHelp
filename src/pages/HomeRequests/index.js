@@ -7,14 +7,19 @@ import {
   InputOne,
   InputTwo,
   InputTextView,
+  ButtonArrow,
 } from './styles';
 import Button from '../Components/Button';
+import {useNavigation} from '@react-navigation/native';
 
 export default function HomeProgress() {
+  const navigation = useNavigation();
   return (
     <Container>
       <ViewRow>
-        <LogoArrow source={require('../../assets/images/Stroke.png')} />
+        <ButtonArrow onPress={() => navigation.goBack()}>
+          <LogoArrow source={require('../../assets/images/Stroke.png')} />
+        </ButtonArrow>
         <TitleSolicite>Solicitações</TitleSolicite>
       </ViewRow>
       <InputTextView>
