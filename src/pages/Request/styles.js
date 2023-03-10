@@ -61,7 +61,6 @@ export const ViewDescribe = styled.View`
   background-color: #202024;
   justify-content: center;
   padding: 20px;
-  margin-top: 20px;
 `;
 
 export const LogoDescribing = styled.Image`
@@ -75,7 +74,6 @@ export const ViewSolving = styled.View`
   background-color: #202024;
   justify-content: center;
   padding: 20px;
-  margin-top: 20px;
 `;
 
 export const LogoSolution = styled.Image`
@@ -87,4 +85,13 @@ export const InputDescribe = styled.TextInput`
   width: 360px;
   height: 273px;
   background-color: #202024;
+`;
+
+export const SeparatorItem = styled.View`
+  height: 20px;
+`;
+
+export const SubContainer = styled.View`
+  width: 100%;
+  align-items: center;
 `;

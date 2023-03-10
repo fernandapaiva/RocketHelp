@@ -18,7 +18,7 @@ export const TitleSolicite = styled.Text`
   color: #e1e1e6;
   font-size: 20px;
   font-weight: bold;
-  right: 100px;
+  width: 65%;
 `;
 
 export const LogoArrow = styled.Image`
@@ -36,16 +36,19 @@ export const InputOne = styled.TextInput`
 
 export const InputTwo = styled.TextInput`
   width: 360px;
-  height: 540px;
+  height: 560px;
   background-color: #121214;
   border-radius: 6px;
-  margin-top: 15px;
   padding: 15px;
 `;
 
 export const InputTextView = styled.View`
   width: 100%;
-  padding: 15px;
+  align-items: center;
 `;
 
 export const ButtonArrow = styled.TouchableOpacity``;
+
+export const ItemSeparator = styled.View`
+  margin-top: 15px;
+`;

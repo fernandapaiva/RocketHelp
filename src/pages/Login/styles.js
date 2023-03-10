@@ -8,19 +8,12 @@ export const Container = styled.View`
 export const SubContainer = styled.View`
   width: 100%;
   align-items: center;
-  margin-top: 50px;
-  padding: 20px;
 `;
 
-export const FirstView = styled.View``;
-
-export const ViewSpace = styled.View`
-  margin-top: 10px;
-`;
+export const ViewSpace = styled.View``;
 
 export const InputTextView = styled.View`
   flex-direction: row;
-  margin-top: 15px;
   width: 364px;
   height: 56px;
   background: #121214;
@@ -57,7 +50,6 @@ export const TextColorWhite = styled.Text`
   color: #e1e1e6;
   font-size: 20px;
   font-weight: bold;
-  margin-top: 70px;
 `;
 
 export const Logo = styled.Image`
@@ -78,4 +70,12 @@ export const ImagePassowrd = styled.Image`
 export const ImageSenha = styled.Image`
   width: 19.25px;
   height: 20.25px;
+`;
+
+export const SeparatorItem = styled.View`
+  margin-top: 50px;
+`;
+
+export const Separator = styled.View`
+  margin-top: 15px;
 `;

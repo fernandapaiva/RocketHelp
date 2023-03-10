@@ -1,40 +1,38 @@
 import React from 'react';
+import {useNavigation} from '@react-navigation/native';
 import {
   Container,
-  ViewRow,
-  TitleSolicite,
-  LogoArrow,
   InputOne,
   InputTwo,
   InputTextView,
-  ButtonArrow,
+  ItemSeparator,
 } from './styles';
 import Button from '../Components/Button';
-import {useNavigation} from '@react-navigation/native';
+import Order from '../Components/Order';
 
-export default function HomeProgress() {
+export default function Details() {
   const navigation = useNavigation();
   return (
     <Container>
-      <ViewRow>
-        <ButtonArrow onPress={() => navigation.goBack()}>
-          <LogoArrow source={require('../../assets/images/Stroke.png')} />
-        </ButtonArrow>
-        <TitleSolicite>Solicitações</TitleSolicite>
-      </ViewRow>
+      <Order />
+      <ItemSeparator />
       <InputTextView>
         <InputOne
           placeholder="Número do Patrimônio"
           keyboardType="text"
           placeholderTextColor="#7c7c8a"
         />
+        <ItemSeparator />
         <InputTwo
           placeholder="Descrição do problema"
           keyboardType="text"
           placeholderTextColor="#7c7c8a"
         />
       </InputTextView>
-      <Button />
+      <Button
+        title="Cadastrar"
+        onPress={() => navigation.navigate('Request')}
+      />
     </Container>
   );
 }

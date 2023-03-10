@@ -121,7 +121,7 @@ export default function Home() {
       )}
       <Button
         title="Nova solicitação"
-        onPress={() => navigation.navigate('Request')}
+        onPress={() => navigation.navigate('Details')}
       />
     </Container>
   );

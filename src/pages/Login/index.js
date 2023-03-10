@@ -7,12 +7,13 @@ import {
   SubContainer,
   InputOne,
   ImageEmail,
-  FirstView,
   TextColorWhite,
   InputTextView,
   ViewImage,
   ViewSpace,
   ImageSenha,
+  Separator,
+  SeparatorItem,
 } from './styles';
 import {useNavigation} from '@react-navigation/native';
 
@@ -22,10 +23,11 @@ export default function Login() {
   return (
     <Container>
       <SubContainer>
-        <FirstView>
-          <Logo source={require('../../assets/images/Logo.png')} />
-        </FirstView>
+        <SeparatorItem />
+        <Logo source={require('../../assets/images/Logo.png')} />
+        <SeparatorItem />
         <TextColorWhite>Acesse sua conta</TextColorWhite>
+        <Separator />
         <ViewSpace>
           <InputTextView>
             <ViewImage>
@@ -37,6 +39,7 @@ export default function Login() {
               placeholderTextColor="#7c7c8a"
             />
           </InputTextView>
+          <Separator />
           <InputTextView>
             <ViewImage>
               <ImageSenha source={require('../../assets/images/Senha.png')} />
