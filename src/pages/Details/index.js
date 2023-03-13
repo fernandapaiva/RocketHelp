@@ -6,6 +6,7 @@ import {
   InputTwo,
   InputTextView,
   ItemSeparator,
+  BackgroundGray,
 } from './styles';
 import Button from '../Components/Button';
 import Order from '../Components/Order';
@@ -19,15 +20,17 @@ export default function Details() {
       <InputTextView>
         <InputOne
           placeholder="Número do Patrimônio"
-          keyboardType="text"
+          keyboardType="numeric"
           placeholderTextColor="#7c7c8a"
         />
         <ItemSeparator />
-        <InputTwo
-          placeholder="Descrição do problema"
-          keyboardType="text"
-          placeholderTextColor="#7c7c8a"
-        />
+        <BackgroundGray>
+          <InputTwo
+            placeholder="Descrição do problema"
+            keyboardType="text"
+            placeholderTextColor="#7c7c8a"
+          />
+        </BackgroundGray>
       </InputTextView>
       <Button
         title="Cadastrar"

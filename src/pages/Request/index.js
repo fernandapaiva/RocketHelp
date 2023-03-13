@@ -17,6 +17,9 @@ import {
   InputDescribe,
   SeparatorItem,
   SubContainer,
+  ViewSolvingTotal,
+  LineGray,
+  TitleRegistre,
 } from './styles';
 import {ScrollView} from 'react-native';
 import Button from '../Components/Button';
@@ -29,7 +32,6 @@ export default function HomeProgress() {
     <Container>
       <ScrollView>
         <Order />
-
         <PacesView>
           <LogoOrange
             source={require('../../assets/images/VectorOrange.png')}
@@ -54,25 +56,27 @@ export default function HomeProgress() {
               <TitleDescription> DESCRIÇÃO DO PROBLEMA</TitleDescription>
             </ViewLine>
             <TitleStandard>
-              Lorem Ipsum has been the industry's standard dummy text ever since
-              the 1500s, when an unknown printer took a galley of type and
-              scrambled it to make a type specimen book.
+              {
+                'Lorem Ipsum has the industrys standard \ndummy text ever since the 1500s, when an \nunknown printer took a galley of type and \nscrambled it to make a type specimen book.'
+              }
             </TitleStandard>
+            <LineGray />
+            <TitleRegistre>Registrado em 20/11/2022 às 14:30</TitleRegistre>
           </ViewDescribe>
           <SeparatorItem />
-          <ViewSolving>
-            <ViewLine>
+          <ViewSolvingTotal>
+            <ViewSolving>
               <LogoSolution
                 source={require('../../assets/images/verific.png')}
               />
               <TitleDescription>SOLUÇÃO</TitleDescription>
-            </ViewLine>
-          </ViewSolving>
-          <InputDescribe
-            placeholder="Descrição da solução"
-            keyboardType="text"
-            placeholderTextColor="#7c7c8a"
-          />
+            </ViewSolving>
+            <InputDescribe
+              placeholder="Descrição da solução"
+              keyboardType="text"
+              placeholderTextColor="#7c7c8a"
+            />
+          </ViewSolvingTotal>
         </SubContainer>
       </ScrollView>
       <Button title="Finalizar" onPress={() => navigation.navigate('Home')} />

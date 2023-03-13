@@ -53,14 +53,16 @@ export const ViewLine = styled.View`
 export const TitleStandard = styled.Text`
   font-size: 16px;
   color: #e1e1e6;
+  margin-top: 10px;
+  line-height: 25px;
 `;
 
 export const ViewDescribe = styled.View`
   width: 360px;
   height: 233px;
   background-color: #202024;
-  justify-content: center;
   padding: 20px;
+  justify-content: center;
 `;
 
 export const LogoDescribing = styled.Image`
@@ -68,12 +70,32 @@ export const LogoDescribing = styled.Image`
   height: 16.88px;
 `;
 
-export const ViewSolving = styled.View`
+export const LineGray = styled.View`
+  height: 1px;
+  width: 320px;
+  background-color: #29292e;
+  align-self: center;
+  margin-top: 10px;
+`;
+
+export const TitleRegistre = styled.Text`
+  font-size: 14px;
+  color: #7c7c8a;
+  margin-top: 10px;
+`;
+
+export const ViewSolvingTotal = styled.View`
   width: 360px;
-  height: 70px;
+  height: 346px;
   background-color: #202024;
   justify-content: center;
   padding: 20px;
+`;
+
+export const ViewSolving = styled.View`
+  height: 70px;
+  background-color: #202024;
+  flex-direction: row;
 `;
 
 export const LogoSolution = styled.Image`
@@ -82,8 +104,8 @@ export const LogoSolution = styled.Image`
 `;
 
 export const InputDescribe = styled.TextInput`
-  width: 360px;
-  height: 273px;
+  width: 100%;
+  height: 220px;
   background-color: #202024;
 `;
 
