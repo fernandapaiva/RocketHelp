@@ -1,7 +1,7 @@
 import Axios from 'axios';
 
 export const api = Axios.create({
-  baseURL: 'http://192.168.0.165:3000/',
+  baseURL: 'http://10.0.1.14:3000/',
   headers: {
     'Content-Type': 'application/json',
   },
@@ -9,14 +9,14 @@ export const api = Axios.create({
 
 export const login = data =>
   api
-    .post('/user', data)
-    .then(resp => resp)
+    .get('/user', data)
+    .then(resp => resp.data)
     .catch(error => error);
 
 export const dataSearch = () =>
   api
     .get('/request')
-    .then(resp => resp)
+    .then(resp => resp.data)
     .catch(error => error);
 
 export const update = data =>
