@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, {useState} from 'react';
 import {
   Container,
   ButtonNav,
@@ -16,9 +16,24 @@ import {
   SeparatorItem,
 } from './styles';
 import {useNavigation} from '@react-navigation/native';
+import {api} from '../../api';
 
 export default function Login() {
   const navigation = useNavigation();
+
+  const [password, setPassword] = useState('fernandapaiva11@hotmail.com');
+  const [email, setEmail] = useState('123456');
+  const [errorEmail, setErrorEmail] = useState(null);
+  const [errorPassword, setErrorPassword] = useState(null);
+
+  const ClickHome = async () => {
+    if (email & password) {
+      api
+        .get('user')
+        .then(resp => console.log(resp.data))
+        .catch(e => console.log(e));
+    }
+  };
 
   return (
     <Container>
