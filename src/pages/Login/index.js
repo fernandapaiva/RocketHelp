@@ -17,21 +17,34 @@ import {
 } from './styles';
 import {useNavigation} from '@react-navigation/native';
 import {api} from '../../api';
+import _ from 'loadsh';
+import {Alert} from 'react-native';
 
 export default function Login() {
   const navigation = useNavigation();
 
-  const [password, setPassword] = useState('fernandapaiva11@hotmail.com');
-  const [email, setEmail] = useState('123456');
-  const [errorEmail, setErrorEmail] = useState(null);
-  const [errorPassword, setErrorPassword] = useState(null);
+  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState('');
+  const [errorEmail, setErrorEmail] = useState(false);
+  const [errorPassword, setErrorPassword] = useState(false);
 
   const ClickHome = async () => {
-    if (email & password) {
+    if (email && password) {
       api
         .get('user')
-        .then(resp => console.log(resp.data))
+        .then(resp => {
+          const isValidEmail = _.isEqual(resp.data[0].login, email);
+          const isValidPassword = _.isEqual(resp.data[0].password, password);
+          if (isValidEmail && isValidPassword) {
+            navigation.navigate('Home');
+          } else {
+            Alert.alert('Email ou senha incorretos');
+          }
+        })
         .catch(e => console.log(e));
+    } else {
+      setErrorEmail(!email);
+      setErrorPassword(!password);
     }
   };
 
@@ -48,25 +61,17 @@ export default function Login() {
             <ViewImage>
               <ImageEmail source={require('../../assets/images/Msg.png')} />
             </ViewImage>
-            <InputOne
-              placeholder="E-mail"
-              keyboardType="email"
-              placeholderTextColor="#7c7c8a"
-            />
+            <InputOne placeholder="E-mail" placeholderTextColor="#7c7c8a" />
           </InputTextView>
           <Separator />
           <InputTextView>
             <ViewImage>
               <ImageSenha source={require('../../assets/images/Senha.png')} />
             </ViewImage>
-            <InputOne
-              placeholder="Senha"
-              keyboardType="passowrd"
-              placeholderTextColor="#7c7c8a"
-            />
+            <InputOne placeholder="Senha" placeholderTextColor="#7c7c8a" />
           </InputTextView>
         </ViewSpace>
-        <ButtonNav onPress={() => navigation.navigate('Home')}>
+        <ButtonNav onPress={() => ClickHome()}>
           <Title>Entrar</Title>
         </ButtonNav>
       </SubContainer>
