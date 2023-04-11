@@ -79,3 +79,10 @@ export const SeparatorItem = styled.View`
 export const Separator = styled.View`
   margin-top: 15px;
 `;
+
+export const ErrorMensage = styled.Text`
+  font-size: 13px;
+  color: red;
+  margin-left: 5px;
+  margin-top: 5px;
+`;

@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {useNavigation} from '@react-navigation/native';
 import {FlatList} from 'react-native';
 import {
@@ -63,6 +63,8 @@ export default function Home() {
       status: 'done',
     },
   ];
+
+  useEffect(() => {}, []);
 
   return (
     <Container>
