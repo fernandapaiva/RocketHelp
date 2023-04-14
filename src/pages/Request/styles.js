@@ -94,6 +94,7 @@ export const ViewSolvingTotal = styled.View`
 
 export const ViewSolving = styled.View`
   height: 70px;
+  width: 340px;
   background-color: #202024;
   flex-direction: row;
 `;
@@ -106,7 +107,11 @@ export const LogoSolution = styled.Image`
 export const InputDescribe = styled.TextInput`
   width: 100%;
   height: 220px;
+  width: 340px;
   background-color: #202024;
+  align-self: center;
+  text-align: justify;
+  text-align-vertical: top;
 `;
 
 export const SeparatorItem = styled.View`

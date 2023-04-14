@@ -11,18 +11,18 @@ export const InputOne = styled.TextInput`
   background-color: #121214;
   border-radius: 6px;
   padding: 12px;
+  align-self: center;
 `;
 
 export const InputTwo = styled.TextInput`
   background-color: #121214;
   padding: 12px;
-`;
-
-export const BackgroundGray = styled.View`
   width: 360px;
   height: 560px;
-  background-color: #121214;
   border-radius: 6px;
+  align-self: center;
+  text-align: justify;
+  text-align-vertical: top;
 `;
 
 export const InputTextView = styled.View`

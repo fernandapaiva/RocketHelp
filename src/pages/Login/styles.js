@@ -21,14 +21,13 @@ export const InputTextView = styled.View`
 `;
 
 export const InputOne = styled.TextInput`
-  width: 90%;
+  width: 85%;
 `;
 
-export const ViewImage = styled.TextInput`
-  width: 10%;
-  justify-content: center;
+export const ViewImage = styled.View`
+  width: 15%;
   align-items: center;
-  margin-left: 10px;
+  justify-content: center;
 `;
 
 export const ButtonNav = styled.TouchableOpacity`
@@ -82,7 +81,7 @@ export const Separator = styled.View`
 
 export const ErrorMensage = styled.Text`
   font-size: 13px;
-  color: red;
+  color: #ff0000;
   margin-left: 5px;
   margin-top: 5px;
 `;

@@ -6,7 +6,7 @@ export const ViewOrder = styled.View`
   background-color: #202024;
   padding: 20px;
   flex-direction: row;
-  align-items: flex-end;
+  align-items: center;
   justify-content: space-between;
 `;
 

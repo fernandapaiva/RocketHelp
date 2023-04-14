@@ -7,9 +7,7 @@ export const ButtonNav = styled.TouchableOpacity`
   background: ${Props => (Props.color ? Props.color : '#00875f')};
   align-items: center;
   justify-content: center;
-  position: absolute;
-  bottom: 20px;
-  left: 10px;
+  align-self: center;
 `;
 
 export const Title = styled.Text`

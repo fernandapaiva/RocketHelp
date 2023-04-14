@@ -30,22 +30,23 @@ export default function Login() {
   const navigation = useNavigation();
 
   const ClickHome = async () => {
-    setErrorEmail(!email);
-    setErrorPassword(!password);
-    if (email && password) {
-      api
-        .get('user')
-        .then(resp => {
-          const isValidEmail = _.isEqual(resp.data[0].login, email);
-          const isValidPassword = _.isEqual(resp.data[0].password, password);
-          if (isValidEmail && isValidPassword) {
-            navigation.navigate('Home');
-          } else {
-            Alert.alert('Email ou senha incorretos');
-          }
-        })
-        .catch(e => console.log(e));
-    }
+    navigation.navigate('Home');
+    // setErrorEmail(!email);
+    // setErrorPassword(!password);
+    // if (email && password) {
+    //   api
+    //     .get('user')
+    //     .then(resp => {
+    //       const isValidEmail = _.isEqual(resp.data[0].login, email);
+    //       const isValidPassword = _.isEqual(resp.data[0].password, password);
+    //       if (isValidEmail && isValidPassword) {
+    //         navigation.navigate('Home');
+    //       } else {
+    //         Alert.alert('Email ou senha incorretos');
+    //       }
+    //     })
+    //     .catch(e => console.log(e));
+    // }
   };
 
   return (
@@ -72,7 +73,7 @@ export default function Login() {
               }}
             />
           </InputTextView>
-          {errorEmail && <ErrorMensage>Campo email obrigatório</ErrorMensage>}
+          {errorEmail && <ErrorMensage>Campo e-mail obrigatório</ErrorMensage>}
           <Separator />
           <InputTextView>
             <ViewImage>

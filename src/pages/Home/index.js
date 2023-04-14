@@ -29,49 +29,53 @@ import {
 
 import Button from '../Components/Button';
 import Header from '../Components/Header';
+import {api} from '../../api';
 
 export default function Home() {
   const navigation = useNavigation();
 
   const [progess, setProgress] = useState(true);
   const [done, setDone] = useState(false);
+  const [requestAll, setRequestAll] = useState([]);
+  const [requestFilter, setRequestFilter] = useState([]);
 
   const onPressProgress = () => {
-    setProgress(!progess);
+    setRequestFilter(requestAll?.filter(item => item?.status === 'Progress'));
+    setProgress(true);
     setDone(false);
   };
 
   const onPressDone = () => {
-    setDone(!done);
+    setRequestFilter(requestAll?.filter(item => item?.status === 'Finish'));
+    setDone(true);
     setProgress(false);
   };
 
-  const DATA = [
-    {
-      title: 'Patrimônio 147456',
-      date: '20/01/22 às 14h',
-      status: 'progess',
-    },
-    {
-      title: 'Patrimônio 147456',
-      date: '20/01/22 às 14h',
-      status: 'progess',
-    },
-    {
-      title: 'Patrimônio 147456',
-      date: '20/01/22 às 14h',
-      status: 'done',
-    },
-  ];
+  useEffect(() => {
+    api
+      .get('request')
+      .then(resp => {
+        if (resp.data) {
+          setRequestAll(resp.data);
+        }
+      })
+      .catch(e => console.log(e));
+  }, []);
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    if (requestAll) {
+      setRequestFilter(requestAll?.filter(item => item?.status === 'Progress'));
+      setProgress(true);
+      setDone(false);
+    }
+  }, [requestAll]);
 
   return (
     <Container>
       <Header />
       <ViewRow>
         <TitleSolicite>Solicitações</TitleSolicite>
-        <TitleNumber>{DATA.length}</TitleNumber>
+        <TitleNumber>{requestFilter.length}</TitleNumber>
       </ViewRow>
       <ViewSearch>
         <ButtonProgress isProgress={progess} onPress={() => onPressProgress()}>
@@ -82,22 +86,22 @@ export default function Home() {
         </ButtonDone>
       </ViewSearch>
       <SeparatorItems />
-      {DATA.length > 0 ? (
+      {requestFilter.length > 0 ? (
         <FlatList
-          data={DATA}
-          renderItem={() => (
+          data={requestFilter}
+          renderItem={item => (
             <>
               <ViewOne>
                 <ViewColum>
                   <Line isProgress={progess} />
                   <ContentItem>
-                    <TitlePatrimony>Patrimônio 147456</TitlePatrimony>
+                    <TitlePatrimony>{item.item.equipment}</TitlePatrimony>
                     <Separator />
                     <ViewBase>
                       <LogoTime
                         source={require('../../assets/images/Vector.png')}
                       />
-                      <TextDate>20/01/22 às 14h</TextDate>
+                      <TextDate>{item.item.registDate}</TextDate>
                     </ViewBase>
                   </ContentItem>
                 </ViewColum>
@@ -125,6 +129,7 @@ export default function Home() {
         title="Nova solicitação"
         onPress={() => navigation.navigate('Details')}
       />
+      <SeparatorItems />
     </Container>
   );
 }
