@@ -22,6 +22,7 @@ export const InputTextView = styled.View`
 
 export const InputOne = styled.TextInput`
   width: 85%;
+  color: #7c7c8a;
 `;
 
 export const ViewImage = styled.View`

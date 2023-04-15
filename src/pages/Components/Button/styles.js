@@ -11,7 +11,7 @@ export const ButtonNav = styled.TouchableOpacity`
 `;
 
 export const Title = styled.Text`
-  color: #ffffff;
+  color: ${Props => (Props.colorText ? Props.colorText : '#ffffff')};
   font-size: 14px;
   font-weight: bold;
 `;

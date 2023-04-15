@@ -177,3 +177,9 @@ export const SeparatorItems = styled.View`
 export const Separator = styled.View`
   height: 5px;
 `;
+
+export const ViewAbsolute = styled.View`
+  position: absolute;
+  width: 100%;
+  bottom: 15px;
+`;

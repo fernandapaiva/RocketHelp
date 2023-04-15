@@ -12,6 +12,7 @@ export const InputOne = styled.TextInput`
   border-radius: 6px;
   padding: 12px;
   align-self: center;
+  color: #7c7c8a;
 `;
 
 export const InputTwo = styled.TextInput`
@@ -23,6 +24,7 @@ export const InputTwo = styled.TextInput`
   align-self: center;
   text-align: justify;
   text-align-vertical: top;
+  color: #7c7c8a;
 `;
 
 export const InputTextView = styled.View`

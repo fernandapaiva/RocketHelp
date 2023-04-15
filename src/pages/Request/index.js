@@ -78,7 +78,6 @@ export default function HomeProgress() {
               </ViewSolving>
               <InputDescribe
                 placeholder="Descrição da solução"
-                keyboardType="text"
                 placeholderTextColor="#7c7c8a"
               />
             </ViewSolvingTotal>

@@ -25,6 +25,7 @@ import {
   Line,
   ContentItem,
   Separator,
+  ViewAbsolute,
 } from './styles';
 
 import Button from '../Components/Button';
@@ -125,11 +126,12 @@ export default function Home() {
           <TextAlert>{'Você ainda não tem \n chamados criados'}</TextAlert>
         </BackgroundSymbol>
       )}
-      <Button
-        title="Nova solicitação"
-        onPress={() => navigation.navigate('Details')}
-      />
-      <SeparatorItems />
+      <ViewAbsolute>
+        <Button
+          title="Nova solicitação"
+          onPress={() => navigation.navigate('Details')}
+        />
+      </ViewAbsolute>
     </Container>
   );
 }

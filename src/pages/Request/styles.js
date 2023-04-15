@@ -112,6 +112,7 @@ export const InputDescribe = styled.TextInput`
   align-self: center;
   text-align: justify;
   text-align-vertical: top;
+  color: #7c7c8a;
 `;
 
 export const SeparatorItem = styled.View`
