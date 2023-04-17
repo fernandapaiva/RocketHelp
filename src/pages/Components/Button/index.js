@@ -3,7 +3,7 @@ import {ButtonNav, Title} from './styles';
 
 export default function Button({title, onPress, color, colorText}) {
   return (
-    <ButtonNav color={color} onPress={() => onPress()}>
+    <ButtonNav activeOpacity={0.7} color={color} onPress={() => onPress()}>
       <Title colorText={colorText}>{title}</Title>
     </ButtonNav>
   );

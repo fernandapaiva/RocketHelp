@@ -5,6 +5,7 @@ import {useNavigation} from '@react-navigation/native';
 import {Container, InputOne, InputTwo, ItemSeparator} from './styles';
 import Button from '../Components/Button';
 import Order from '../Components/Order';
+import {api} from '../../api';
 
 export default function Details() {
   const navigation = useNavigation();
@@ -21,7 +22,14 @@ export default function Details() {
         registDate: '2022-11-20',
         solution: '',
       };
-      // navigation.navigate('Request');
+      api
+        .post('request', data)
+        .then(resp => {
+          if (resp.data) {
+            navigation.navigate('Home');
+          }
+        })
+        .catch(e => console.log(e));
     }
   };
 
@@ -56,7 +64,7 @@ export default function Details() {
             title="Cadastrar"
             onPress={() => {}}
             color="#A5A5A5"
-            colorText="#D7D7D7"
+            colorText="#696969"
           />
         )}
       </Container>
