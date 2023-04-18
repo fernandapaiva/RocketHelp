@@ -130,7 +130,7 @@ export const TextDate = styled.Text`
   margin-left: 5px;
 `;
 
-export const ViewOne = styled.View`
+export const ViewOne = styled.TouchableOpacity`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;

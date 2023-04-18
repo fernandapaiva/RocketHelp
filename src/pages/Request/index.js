@@ -25,9 +25,24 @@ import {
 import {KeyboardAvoidingView, ScrollView} from 'react-native';
 import Button from '../Components/Button';
 import Order from '../Components/Order';
+import {api} from '../../api';
 
-export default function HomeProgress() {
+export default function Request({route}) {
   const navigation = useNavigation();
+
+  const params = route?.params;
+  console.log(params.data);
+
+  const onPressFinish = () => {
+    api
+      .put(`request/${params.data.id}`)
+      .then(resp => {
+        if (resp.data) {
+          navigation.navigate('Home');
+        }
+      })
+      .catch(e => console.log(e));
+  };
 
   return (
     <KeyboardAvoidingView
@@ -50,7 +65,7 @@ export default function HomeProgress() {
                 <LogoComputer source={require('../../assets/images/pc.png')} />
                 <TitleDescription>EQUIPAMENTO</TitleDescription>
               </ViewLine>
-              <TitleStandard>Patrimônio 123456</TitleStandard>
+              <TitleStandard>{params.data.equipment}</TitleStandard>
             </EquipmentView>
             <SeparatorItem />
             <ViewDescribe>
@@ -60,11 +75,7 @@ export default function HomeProgress() {
                 />
                 <TitleDescription> DESCRIÇÃO DO PROBLEMA</TitleDescription>
               </ViewLine>
-              <TitleStandard>
-                {
-                  'Lorem Ipsum has the industrys standard \ndummy text ever since the 1500s, when an \nunknown printer took a galley of type and \nscrambled it to make a type specimen book.'
-                }
-              </TitleStandard>
+              <TitleStandard>{params.data.description}</TitleStandard>
               <LineGray />
               <TitleRegistre>Registrado em 20/11/2022 às 14:30</TitleRegistre>
             </ViewDescribe>
@@ -83,10 +94,7 @@ export default function HomeProgress() {
             </ViewSolvingTotal>
           </SubContainer>
           <SeparatorItem />
-          <Button
-            title="Finalizar"
-            onPress={() => navigation.navigate('Home')}
-          />
+          <Button title="Finalizar" onPress={() => onPressFinish} />
           <SeparatorItem />
         </Container>
       </ScrollView>

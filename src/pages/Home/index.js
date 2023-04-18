@@ -92,7 +92,11 @@ export default function Home() {
           data={requestFilter}
           renderItem={item => (
             <>
-              <ViewOne>
+              <ViewOne
+                activeOpacity={0.7}
+                onPress={() =>
+                  navigation.navigate('Request', {data: item.item})
+                }>
                 <ViewColum>
                   <Line isProgress={progess} />
                   <ContentItem>
