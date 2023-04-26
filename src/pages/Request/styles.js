@@ -19,9 +19,21 @@ export const LogoOrange = styled.Image`
   height: 17.88px;
 `;
 
+export const LogoGreen = styled.Image`
+  width: 19.25px;
+  height: 19.25px;
+`;
+
 export const TitleOrange = styled.Text`
   font-size: 14px;
   color: #fba94c;
+  font-weight: bold;
+  margin-left: 10px;
+`;
+
+export const TitleGreen = styled.Text`
+  font-size: 14px;
+  color: #04d361;
   font-weight: bold;
   margin-left: 10px;
 `;

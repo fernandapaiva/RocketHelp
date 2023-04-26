@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {useNavigation} from '@react-navigation/native';
+import {useNavigation, useIsFocused} from '@react-navigation/native';
 import {FlatList} from 'react-native';
 import {
   Container,
@@ -27,6 +27,7 @@ import {
   Separator,
   ViewAbsolute,
 } from './styles';
+import LoadingView from '../Components/Loading';
 
 import Button from '../Components/Button';
 import Header from '../Components/Header';
@@ -35,10 +36,13 @@ import {api} from '../../api';
 export default function Home() {
   const navigation = useNavigation();
 
+  const isFocused = useIsFocused();
+
   const [progess, setProgress] = useState(true);
   const [done, setDone] = useState(false);
   const [requestAll, setRequestAll] = useState([]);
   const [requestFilter, setRequestFilter] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   const onPressProgress = () => {
     setRequestFilter(requestAll?.filter(item => item?.status === 'Progress'));
@@ -52,7 +56,8 @@ export default function Home() {
     setProgress(false);
   };
 
-  useEffect(() => {
+  const getData = () => {
+    setLoading(true);
     api
       .get('request')
       .then(resp => {
@@ -60,8 +65,15 @@ export default function Home() {
           setRequestAll(resp.data);
         }
       })
-      .catch(e => console.log(e));
-  }, []);
+      .catch(e => console.log(e))
+      .finally(() => setLoading(false));
+  };
+
+  useEffect(() => {
+    if (isFocused) {
+      getData();
+    }
+  }, [isFocused]);
 
   useEffect(() => {
     if (requestAll) {
@@ -72,70 +84,79 @@ export default function Home() {
   }, [requestAll]);
 
   return (
-    <Container>
-      <Header />
-      <ViewRow>
-        <TitleSolicite>Solicitações</TitleSolicite>
-        <TitleNumber>{requestFilter.length}</TitleNumber>
-      </ViewRow>
-      <ViewSearch>
-        <ButtonProgress isProgress={progess} onPress={() => onPressProgress()}>
-          <TextOrange isProgress={progess}>EM ANDAMENTO</TextOrange>
-        </ButtonProgress>
-        <ButtonDone done={done} onPress={() => onPressDone()}>
-          <TextGreen done={done}>FINALIZADOS</TextGreen>
-        </ButtonDone>
-      </ViewSearch>
-      <SeparatorItems />
-      {requestFilter.length > 0 ? (
-        <FlatList
-          data={requestFilter}
-          renderItem={item => (
-            <>
-              <ViewOne
-                activeOpacity={0.7}
-                onPress={() =>
-                  navigation.navigate('Request', {data: item.item})
-                }>
-                <ViewColum>
-                  <Line isProgress={progess} />
-                  <ContentItem>
-                    <TitlePatrimony>{item.item.equipment}</TitlePatrimony>
-                    <Separator />
-                    <ViewBase>
-                      <LogoTime
-                        source={require('../../assets/images/Vector.png')}
-                      />
-                      <TextDate>{item.item.registDate}</TextDate>
-                    </ViewBase>
-                  </ContentItem>
-                </ViewColum>
-                {progess ? (
-                  <LogoClock
-                    source={require('../../assets/images/IconTime.png')}
-                  />
-                ) : (
-                  <LogoClock
-                    source={require('../../assets/images/IconCheck.png')}
-                  />
-                )}
-              </ViewOne>
-              <SeparatorItems />
-            </>
-          )}
-        />
-      ) : (
-        <BackgroundSymbol>
-          <Symbol source={require('../../assets/images/symbol.png')} />
-          <TextAlert>{'Você ainda não tem \n chamados criados'}</TextAlert>
-        </BackgroundSymbol>
-      )}
-      <ViewAbsolute>
-        <Button
-          title="Nova solicitação"
-          onPress={() => navigation.navigate('Details')}
-        />
-      </ViewAbsolute>
-    </Container>
+    <>
+      {loading && <LoadingView />}
+      <Container>
+        <Header />
+        <ViewRow>
+          <TitleSolicite>Solicitações</TitleSolicite>
+          <TitleNumber>{requestFilter.length}</TitleNumber>
+        </ViewRow>
+        <ViewSearch>
+          <ButtonProgress
+            isProgress={progess}
+            onPress={() => onPressProgress()}>
+            <TextOrange isProgress={progess}>EM ANDAMENTO</TextOrange>
+          </ButtonProgress>
+          <ButtonDone done={done} onPress={() => onPressDone()}>
+            <TextGreen done={done}>FINALIZADOS</TextGreen>
+          </ButtonDone>
+        </ViewSearch>
+        <SeparatorItems />
+        {requestFilter.length > 0 ? (
+          <FlatList
+            data={requestFilter}
+            renderItem={item => (
+              <>
+                <ViewOne
+                  activeOpacity={0.7}
+                  onPress={() =>
+                    navigation.navigate('Request', {data: item.item})
+                  }>
+                  <ViewColum>
+                    <Line isProgress={progess} />
+                    <ContentItem>
+                      <TitlePatrimony>{item.item.equipment}</TitlePatrimony>
+                      <Separator />
+                      <ViewBase>
+                        <LogoTime
+                          source={require('../../assets/images/Vector.png')}
+                        />
+                        <TextDate>{item.item.registDate}</TextDate>
+                      </ViewBase>
+                    </ContentItem>
+                  </ViewColum>
+                  {progess ? (
+                    <LogoClock
+                      source={require('../../assets/images/IconTime.png')}
+                    />
+                  ) : (
+                    <LogoClock
+                      source={require('../../assets/images/IconCheck.png')}
+                    />
+                  )}
+                </ViewOne>
+                <SeparatorItems />
+              </>
+            )}
+          />
+        ) : (
+          <BackgroundSymbol>
+            <Symbol source={require('../../assets/images/symbol.png')} />
+            <TextAlert>{'Você ainda não tem \n chamados criados'}</TextAlert>
+          </BackgroundSymbol>
+        )}
+        <SeparatorItems />
+        <SeparatorItems />
+        <SeparatorItems />
+        <SeparatorItems />
+        <ViewAbsolute>
+          <Button
+            title="Nova solicitação"
+            onPress={() => navigation.navigate('Details')}
+          />
+        </ViewAbsolute>
+      </Container>
+    </>
   );
 }
