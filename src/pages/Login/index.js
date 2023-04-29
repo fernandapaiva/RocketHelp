@@ -21,6 +21,7 @@ import {
 import LoadingView from '../Components/Loading';
 import {api} from '../../api';
 import _ from 'loadsh';
+import AlertCustom from '../Components/AlertCustom';
 
 export default function Login() {
   const [password, setPassword] = useState('');
@@ -28,6 +29,8 @@ export default function Login() {
   const [errorEmail, setErrorEmail] = useState(false);
   const [errorPassword, setErrorPassword] = useState(false);
   const [loading, setLoading] = useState(false);
+
+  const [visible, setVisible] = useState(true);
 
   const navigation = useNavigation();
 
@@ -45,7 +48,7 @@ export default function Login() {
     //       if (isValidEmail && isValidPassword) {
     //         navigation.navigate('Home');
     //       } else {
-    //         Alert.alert('Email ou senha incorretos');
+    //         setVisible(true);
     //       }
     //     })
     //     .catch(e => console.log(e))
@@ -55,6 +58,12 @@ export default function Login() {
 
   return (
     <>
+      <AlertCustom
+        title="Falha ao realizar Login"
+        type="Error"
+        information="Email ou senha incorretos"
+        visible={visible}
+      />
       {loading && <LoadingView />}
       <Container>
         <SubContainer>
