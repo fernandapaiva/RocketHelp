@@ -5,10 +5,11 @@ export const Container = styled.View`
   justify-content: center;
   align-items: center;
   background-color: black;
+  opacity: 0.88;
 `;
 
 export const ContainerInside = styled.View`
-  background-color: #ffffff;
+  background-color: #202024;
   width: 95%;
   min-height: 300px;
   border-radius: 5px;
@@ -33,13 +34,14 @@ export const Separator = styled.View`
 `;
 
 export const TitleAlertRed = styled.Text`
-  font-size: 18px;
+  font-size: 20px;
   font-weight: bold;
-  color: ${props => (props.type === 'Sucess' ? '#04d361' : '#ff0000')};
+  color: ${props => (props.type === 'Sucess' ? '#04d361' : '#fe555f')};
   /* font-weight: 'bold'; */
 `;
 
 export const Information = styled.Text`
   font-size: 14px;
-  color: #282828;
+  color: #fff;
+  font-weight: 400;
 `;

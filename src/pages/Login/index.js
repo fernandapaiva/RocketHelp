@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-import {Alert} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import {
   Container,
@@ -30,39 +29,42 @@ export default function Login() {
   const [errorPassword, setErrorPassword] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  const [visible, setVisible] = useState(true);
+  const [visible, setVisible] = useState(false);
 
   const navigation = useNavigation();
 
   const ClickHome = async () => {
-    navigation.navigate('Home');
-    // setErrorEmail(!email);
-    // setErrorPassword(!password);
-    // if (email && password) {
-    //   setLoading(true);
-    //   api
-    //     .get('user')
-    //     .then(resp => {
-    //       const isValidEmail = _.isEqual(resp.data[0].login, email);
-    //       const isValidPassword = _.isEqual(resp.data[0].password, password);
-    //       if (isValidEmail && isValidPassword) {
-    //         navigation.navigate('Home');
-    //       } else {
-    //         setVisible(true);
-    //       }
-    //     })
-    //     .catch(e => console.log(e))
-    //     .finally(() => setLoading(false));
-    // }
+    // navigation.navigate('Home');
+    setErrorEmail(!email);
+    setErrorPassword(!password);
+    if (email && password) {
+      setLoading(true);
+      api
+        .get('user')
+        .then(resp => {
+          const isValidEmail = _.isEqual(resp.data[0].login, email);
+          const isValidPassword = _.isEqual(resp.data[0].password, password);
+          if (isValidEmail && isValidPassword) {
+            navigation.navigate('Home');
+          } else {
+            setVisible(true);
+          }
+        })
+        .catch(e => console.log(e))
+        .finally(() => setLoading(false));
+    }
   };
+
+  const onPressModal = () => setVisible(false);
 
   return (
     <>
       <AlertCustom
-        title="Falha ao realizar Login"
+        title="Falha ao realizar login"
         type="Error"
         information="Email ou senha incorretos"
         visible={visible}
+        onPress={() => onPressModal()}
       />
       {loading && <LoadingView />}
       <Container>

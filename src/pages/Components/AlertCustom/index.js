@@ -18,6 +18,7 @@ export default function AlertCustom({
   setVisible,
   title,
   information,
+  onPress,
 }) {
   return (
     <Modal
@@ -38,8 +39,7 @@ export default function AlertCustom({
             <Separator />
             <Information>{information}</Information>
             <SeparatorItems />
-            <SeparatorItems />
-            <Button title="OK, ENTENDI" onPress={() => {}} />
+            <Button title="OK, ENTENDI" onPress={() => onPress()} />
           </ContainerSeparator>
         </ContainerInside>
       </Container>
