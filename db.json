@@ -1,0 +1,27 @@
+{
+  "user": [
+    {
+      "id": 1,
+      "login": "fernandapaiva11@hotmail.com",
+      "password": "24071997"
+    }
+  ],
+  "request": [
+    {
+      "status": "Finish",
+      "equipment": "Patrimônio 1",
+      "description": "Defeito na placa",
+      "registDate": "2022-11-20",
+      "solution": "Dd.",
+      "id": 1
+    },
+    {
+      "status": "Finish",
+      "equipment": "Patrimônio 2",
+      "description": "Erro no pagamento ",
+      "registDate": "2022-11-20",
+      "solution": "Fgghjkkl",
+      "id": 2
+    }
+  ]
+}
