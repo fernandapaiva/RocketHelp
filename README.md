@@ -32,5 +32,5 @@ $ yarn api // Start JSON-SERVER
 - Styled Components
 - JSON Server
 - React Navigation
-- React Native SVG
 - React Native Vector Icons
+- Loadsh
