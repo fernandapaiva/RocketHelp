@@ -34,7 +34,6 @@ export default function Login() {
   const navigation = useNavigation();
 
   const ClickHome = async () => {
-    // navigation.navigate('Home');
     setErrorEmail(!email);
     setErrorPassword(!password);
     if (email && password) {
